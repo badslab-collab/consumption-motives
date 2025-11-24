@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import f1_score
 
-df = pd.read_excel('10 Comment Unsorted.xlsx')
+df = pd.read_excel('10 Comment Unsorted Scenarios2.xlsx')
 
 X = df.drop(['Label', 'Participants', 'Participant no','Feature 11','Feature 12','Feature 13','Feature 14',	'Feature 15','Feature 16','Feature 17',	'Feature 18','Feature 19','Feature 20'], axis=1).values
 y = df['Label'].values
@@ -43,4 +43,5 @@ for random_state in range(1, 201):
     print(f'Random State: {random_state} | Test Accuracy: {test_score:.3f} | CV Accuracy: {cv_accuracy:.3f} | F1 Score: {f1:.3f}')
     test_score_avg+=test_score
 print(f'\nBest Random State: {best_state} with Test Accuracy: {best_accuracy:.3f}')
+
 print("test score average : " , test_score_avg/200)
