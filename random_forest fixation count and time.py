@@ -6,7 +6,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.metrics import f1_score
 
 
-df = pd.read_excel('10 Comment Unsorted.xlsx')
+df = pd.read_excel('10 Comment Unsorted Scenarios2.xlsx')
 
 X = df.drop(['Label', 'Participants', 'Participant no'], axis=1).values
 y = df['Label'].values
@@ -45,3 +45,4 @@ for random_state in range(1, 201):
 
 print(f'\nBest Random State: {best_state} with Test Accuracy: {best_accuracy:.3f}')
 print(f'Test Score Average: {test_score_sum / 200:.3f}')
+
