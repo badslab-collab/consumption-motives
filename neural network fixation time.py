@@ -66,7 +66,7 @@ for random_state in range(1, n_runs + 1):
     best_val_loss = float('inf')
     best_model_state = None
 
-    for epoch in range(1000):
+    for epoch in range(500):
         model.train()
         for xb, yb in train_loader:
             pred = model(xb)
@@ -103,4 +103,5 @@ for random_state in range(1, n_runs + 1):
 
 print(f'\nBest Random State: {best_state} with Test Accuracy: {best_accuracy:.3f}')
 print(f'Average Test Accuracy over {n_runs} runs: {total_accuracy / n_runs:.3f}')
+
 
