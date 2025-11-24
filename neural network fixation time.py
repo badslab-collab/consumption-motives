@@ -25,7 +25,7 @@ class Net(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
-df = pd.read_excel('10 Comment Unsorted.xlsx')
+df = pd.read_excel('10 Comment Unsorted Scenarios2.xlsx')
 X = df.drop(['Label', 'Participants', 'Participant no','Feature 1',	'Feature 2'	,'Feature 3',	'Feature 4',	'Feature 5'	,'Feature 6'	,'Feature 7',	'Feature 8',	'Feature 9',	'Feature 10'], axis=1).values
 y = df['Label'].values
 scaler = StandardScaler()
@@ -103,3 +103,4 @@ for random_state in range(1, n_runs + 1):
 
 print(f'\nBest Random State: {best_state} with Test Accuracy: {best_accuracy:.3f}')
 print(f'Average Test Accuracy over {n_runs} runs: {total_accuracy / n_runs:.3f}')
+
